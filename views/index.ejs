@@ -1,0 +1,11 @@
+<div>
+    <h1>カテゴリ</h1>
+    <div id="title">
+        <% categorytitles.forEach(category => {%>
+            <a href="/threads/<%= category%>">
+                <p><%= category%></p>
+            </a>
+        <%})%>
+    </div>
+</div>
+

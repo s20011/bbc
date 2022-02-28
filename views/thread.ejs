@@ -1,0 +1,11 @@
+<div>
+    <h1>カテゴリ名：<%= categorytitle%></h1>
+    <a href="/threads/<%= categorytitle%>/new"><p>新規スレッド作成</p></a>
+    <div>
+        <% threads.forEach(t => {%>
+            <a href="/<%= categorytitle%>/<%= t.title%>"><p><%= t.title%></p></a>
+        <%})%>
+
+    </div>
+
+</div>

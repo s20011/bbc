@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1">
+    <title>掲示板</title>
+    <style media="screen">
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            color: black;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        #footer{
+            background-color: #04e3c2;
+            position: relative;
+            bottom: 0;
+        }
+
+        #title{
+        }
+
+        #container {
+            height: 100px;
+            padding-top: 40px;
+        }
+
+        .block {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            width: 100%;
+            text-align: center;
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="footer" class="block">
+    <h1 id="title">掲示板</h1>
+</div>
+<div id="container">
+    <%- body %>
+</div>
+
+
+
+</body>
+
+</html>
