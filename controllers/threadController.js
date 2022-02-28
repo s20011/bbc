@@ -15,4 +15,24 @@ module.exports = {
     newView: (req, res) => {
         res.render("new")
     },
+    create: (req, res, next) => {
+        let params = {
+            title: req.body.title,
+            category: req.params.category
+        };
+        Thread.create(params)
+            .then(thread => {
+                res.locals.redirect = "/";
+                res.locals.threads = thread
+            })
+            .catch(error => {
+                console.log("Error")
+                next(error)
+            })
+    },
+    redirectView: (req, res, next) => {
+        let Path = res.locals.redirect;
+        if(Path !== undefined) res.redirect(Path)
+        else next();
+    }
 }
