@@ -8,7 +8,7 @@ module.exports = {
         /*Thread.create(
             {
                 title: "TEST00",
-                categoryname: "ニュース"
+                categoryName: "ニュース"
             },
 
             function (error, savedDocument) {
@@ -17,11 +17,11 @@ module.exports = {
             }
         )*/
         console.log(`${category}`)
-        Thread.find({categoryname: category})
+        Thread.find({categoryName: category})
             .then(thread => {
                 console.log(`${thread}`)
                 console.log(`${thread.title}`)
-                res.render("thread", {categorytitle: category, threads: thread})
+                res.render("thread", {categoryTitle: category, threads: thread})
             });
     },
     newView: (req, res) => {
@@ -30,7 +30,7 @@ module.exports = {
     create: (req, res, next) => {
         let params = {
             title: req.body.title,
-            categoryname: req.params.category
+            categoryName: req.params.category
         };
 
         Thread.create(params)

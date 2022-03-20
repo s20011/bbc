@@ -9,7 +9,7 @@ const threadSchema = new Schema(
             type: String,
             unique: true
         },
-        categoryname: {
+        categoryName: {
             type: String
         }
     }, { timestamps: true }
