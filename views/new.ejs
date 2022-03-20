@@ -1,5 +1,5 @@
 <div>
-    <form action="/threads/create" method="POST">
+    <form action="/threads/<%= category%>/create" method="POST">
         <h1>スレッド作成</h1>
         <label for="inuputTitle">タイトル</label>
         <input  type="text" name="title" id="inuputTitle" placeholder="Title" autofocus required>

@@ -25,22 +25,28 @@ module.exports = {
             });
     },
     newView: (req, res) => {
-        res.render("new")
+        res.render("new", {category: req.params.category})
     },
     create: (req, res, next) => {
         let params = {
             title: req.body.title,
             categoryname: req.params.category
         };
+
         Thread.create(params)
             .then(thread => {
                 res.locals.redirect = "/";
-                res.locals.threads = thread
+                res.locals.threads = thread;
+                next()
             })
             .catch(error => {
                 console.log("Error")
                 next(error)
             })
+
+        console.log(`Create Thread: ${params}`);
+        console.log(`CategoryName: ${req.params.category}`);
+        console.log(`Title: ${req.body.title}`)
     },
     redirectView: (req, res, next) => {
         let Path = res.locals.redirect;
