@@ -6,6 +6,7 @@ const express = require("express"),
     router = require("./routes/index"),
     mongoose = require("mongoose");
 
+
 mongoose.Promise = global.Promise;
 
 mongoose.connect(
